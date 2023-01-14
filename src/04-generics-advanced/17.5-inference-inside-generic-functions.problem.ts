@@ -6,8 +6,8 @@ type Person = {
 
 export function remapPerson<Key extends keyof Person>(
   key: Key,
-  value: Person[Key],
-): Person[Key] {
+  value: Person[Key]
+): Person[Key] | Date {
   if (key === "birthdate") {
     return new Date();
   }
