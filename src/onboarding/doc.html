@@ -1,0 +1,110 @@
+# Overview of the development process and version control - For each sprint,
+[development
+tickets](https://dev.azure.com/datainsightnz/Di%20Footprint/_boards/board/t/Di%20Footprint%20Team/Backlog%20items)
+are created based on the Product Backlog Items
+([PBIs](https://dev.azure.com/datainsightnz/Di%20Footprint/_backlogs/backlog/Di%20Footprint%20Team/Backlog%20items))
+in [Azure DevOps](https://dev.azure.com/datainsightnz) for each project. - Each
+developer will be assigned a ticket to work on. Once you are assigned with the
+task, change the task's user name to your name and save it as shown below: -
+Data Insight uses GitHub as its version control platform ([GitHub
+repository](https://github.com/datainsight-nz)). ### Getting started - Before
+starting to add or edit code in a project, create a branch named "AB#" followed
+by the task number you are working on from the relevant Azure Dev Ops Project
+e.g : `git checkout -b "AB#178"` ### Committing work and submitting Pull
+Requests Commit regularly when working on tasks, using the branch name at the
+start of your commit message, followed by a detailed explanation of changes
+made. e.g: `git commit -m "AB#178 Added margin to nav items to prevent them from
+overlapping the logo"` For further info and tips on writing helpful commit
+messages checkout
+https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/ When
+the code is ready to be added to the main branch, commit your work as above and
+push to the remote repository: `git push origin
+<branch name
+  >` Then submit a pull request from VS Code, using the GitHub Pull Request
+  extension. Ensure you assign your manager to the pull request after submitting
+  it. # Development Environment - OS: Windows - Programming languages:
+  JavaScript and TypeScript - Frameworks: React (NextJS) - Data base: -
+  Cloud/Server: Azure ### Recommended Apps Install the following from the
+  Company Portal App: - [Git](https://git-scm.com/) - Once installed open and
+  configure your username and email address with the following commands: `git
+  config --global user.name "FIRST_NAME LAST_NAME"` `git config --global
+  user.email "MY_NAME@example.com"` - [Node.js](https://nodejs.org/en/) - Docker
+  Desktop - Docker Tool - WSL - checkout
+  https://learn.microsoft.com/en-us/windows/wsl/install for instructions on
+  installing WSL on your computer. ### Recommended VS Code Extensions - ES Lint
+  - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint -
+  Prettier -
+  https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode -
+  Git Hub Pull Requests and Issues -
+  https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
+  - Git Lens -
+  https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens - Tailwind
+  CSS Intellisense -
+  https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+  - Docker -
+  https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
+  - Prisma - https://marketplace.visualstudio.com/items?itemName=Prisma.prisma -
+  WSL -
+  https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+  # Documentation of the codebase, including architecture and relevant libraries
+  #### To be documented # Code of conduct and company policies regarding
+  security and privacy #### Relevant training is to be provided to the new
+  employers during their on-boarding period # The Dev Team ### The Dev Team is
+  part of the product team <strong>Nicholas Wykes</strong> - Senior Software
+  Developer <strong>Adrian Nicholas</strong> - Software Developer (Full Stack)
+  <strong>YJ You</strong> - Front-End Software Developer
+  <strong>Michael Howell</strong> - Front-End Software Engineer (Intern) We
+  strive to be an awesome team! # Overview of the project(s) ### DI Retain ###
+  DI Footprint ### DI Nexus ## Setting Up DI projects locally #### Create a
+  folder which will hold your local projects (C:\Development) ## DI Retain -
+  Clone the DI Retain repository into your local projects folder by pasting the
+  following into Powershell: `git clone
+  https://github.com/datainsight-nz/di-retain.git` move to di-retain folder and
+  open the project in VS Code `$ code .` - From VS Code terminal run `npm
+  install` - Then run `npm start` - Go to http://localhost:3000 to view it in
+  your browser. ## DI Footprint - Clone the DI Footprint repository into your
+  local projects folder by pasting the following into Powershell: `git clone
+  https://github.com/datainsight-nz/di-footprint.git` move to di-footprint
+  folder and open the project in VS Code `$ code .` - From VS Code Terminal run
+  `npm install` - Create an instance of the container image by copying the
+  following into the terminal and pressing enter, replacing the value of
+  SA_PASSWORD with a password of your choice: `docker run --name
+  footprint_sql_container -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=myPassword' -p
+  1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest` - From VS Code
+  Explorer copy env.example to the root directory, renaming it to .env,
+  replacing the DATABASE_URL password to the one chosen in the step above. - You
+  can generate the Next Auth secret via `openssl rand -base64 32` on Linux -
+  From VS Code terminal run: `prisma generate --schema
+  ./src/modules/prisma/schema.prisma` `npx prisma db push --schema
+  ./src/modules/prisma/schema.prisma` - then `npm run dev` to start the project
+  - Go to http://localhost:3000 to view it in your browser. ## Nexus - Clone the
+  Nexus repository into your local projects folder by pasting the following into
+  Powershell: `git clone https://github.com/datainsight-nz/nexus.git` move to
+  nexus folder and open the project in VS Code `$ code .` - Follow instructions
+  from README.md to get project running. # Code review ### Your code will be
+  reviewed during the pull request review. Also, developers can always consult
+  with a senior developer for a code feedback. # Performance evaluation and
+  feedback processes ### Performance is to be formally evaluated in the
+  quarterly review. However, a feedback on developers' performance will be given
+  in their fortnightly catch-up with a senior developer # Career development and
+  training opportunities ### This will be discussed individually with a senior
+  developer in fortnightly catch-up # Additional useful resources - Building a
+  design system - some great advice to consider when building out our component
+  library https://www.youtube.com/watch?v=T-Zv73yZ_QI - Wanting to upskill or
+  pondering your route to awesomeness? Checkout Developer Roadmaps!
+  https://roadmap.sh/roadmaps - How about some Dev Talks? An excellent resource
+  covering a wide range of dev topics, well worth checking out!
+  https://portal.gitnation.org/ - Are you interested in learning JavaScript
+  frameworks like React, NextJS, and Angular? Check out this link:
+  https://upmostly.com/ - Keen to upskill your CS knowledge?
+  https://cs50.harvard.edu/x/2023/ ## Cheatsheets No sense memorising every
+  option! Use these handy reference sites -
+  [Tailwind](https://nerdcave.com/tailwind-cheat-sheet) - [CSS
+  Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - [CSS
+  Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - [VS
+  Code](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+  -
+  [TypeSript](https://www.typescriptlang.org/static/TypeScript%20Types-ae199d69aeecf7d4a2704a528d0fd3f9.png)
+  - [React
+  TypeScript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)</branch
+>
