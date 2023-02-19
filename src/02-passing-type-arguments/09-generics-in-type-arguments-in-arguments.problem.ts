@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-export class Component<T > {
+export class Component<T> {
   private props: T;
 
   constructor(props: T) {
@@ -11,7 +11,7 @@ export class Component<T > {
   getProps = () => this.props;
 }
 
-const cloneComponent =  (component: T) => {
+const cloneComponent = <T>(component: Component<T>) => {
   return new Component(component.getProps());
 };
 
