@@ -11,7 +11,7 @@ export class Component<T> {
   getProps = () => this.props;
 }
 
-const cloneComponent = <T>(component: Component<T>) => {
+const cloneComponent = (component: T) => {
   return new Component(component.getProps());
 };
 
