@@ -21,4 +21,5 @@ it("Should create an object containing props", () => {
   type tests = [
     Expect<Equal<typeof result, { a: number; b: number; c: number }>>
   ];
-});
+}) ;
+ 

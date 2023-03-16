@@ -20,3 +20,4 @@ it("Should return the keys of the object", () => {
 
   type test = Expect<Equal<typeof result1, Array<"a" | "b">>>;
 });
+z
