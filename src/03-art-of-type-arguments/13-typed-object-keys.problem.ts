@@ -6,7 +6,7 @@ import { Equal, Expect } from "../helpers/type-utils";
  * to do with the way you specify the generic. Can you get
  * both solutions?
  */
-const typedObjectKeys = <T extends object>(obj: T) => {
+const typedObjectKeys = <T extends {}>(obj: T) => {
   return Object.keys(obj) as Array<keyof T>;
 };
 
