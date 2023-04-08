@@ -2,9 +2,9 @@ import { expect, it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
 export const curryFunction =
-  <T>(t: T) =>
-  <U>(u: U) =>
-  <V>(v: V) => {
+  <T, U, V>(t: T) =>
+  (u: U) =>
+  (v: V) => {
     return {
       t,
       u,
